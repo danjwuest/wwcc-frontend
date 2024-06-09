@@ -1,0 +1,24 @@
+{
+  "name": "homework-01",
+  "version": "1.0.0",
+  "description": "Recreate a webpage using the JavaScript DOM API to create all the elements.",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WWCC-CS247/Homework-01.git"
+  },
+  "author": "Nick Ferraro",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/WWCC-CS247/Homework-01/issues"
+  },
+  "homepage": "https://github.com/WWCC-CS247/Homework-01#readme",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
+}
