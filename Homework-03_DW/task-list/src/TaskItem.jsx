@@ -20,9 +20,10 @@ class TaskItem extends Component {
         onDelete: propTypes.func
 
     }
+    // Do I need a constructor here?
 
     // Check handler that calls onComplete from the List object of TaskItem objects
-    handleCheck = (e) => {
+    handleChecked = (e) => {
         const {task, onChecked} = this.props;
 
         if (e.target.checked) {
@@ -31,10 +32,10 @@ class TaskItem extends Component {
     }
 
     // Similar to handleCheck, but for removing with the trashcan button.
-    handleRemove = () => {
-        const { task, onRemove } = this.props;
+    handleDelete = () => {
+        const { task, onDelete } = this.props;
 
-        onRemove(task.id);
+        onDelete(task.id);
     }
 
     // When an object of this class is created, it will set its properties and return the html for displaying the object
@@ -49,7 +50,7 @@ class TaskItem extends Component {
                     className="task-checkbox"
                     type="checkbox"
                     checked={task.complete}
-                    onChange={this.handleChange}
+                    onChecked={this.handleChecked}
                 />
                 
                 <div className="task-description">{task.description}</div>
@@ -58,7 +59,7 @@ class TaskItem extends Component {
                     className="task-remove-icon"
                     src={garbageIcon}
                     alt="Remove task"
-                    onClick={this.handleRemove}
+                    onClick={this.handleDelete}
                 />
             </div>
         )

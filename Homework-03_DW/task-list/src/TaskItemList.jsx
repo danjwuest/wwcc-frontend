@@ -36,7 +36,7 @@ export default function TaskItemList(props) {
 
 
     // Also not how I want to handle timed deletion, but we'll get back to that
-    
+
     const handleComplete = (taskId) => {
 
         var tempTasks = tasks.map((task) => {
@@ -66,8 +66,8 @@ export default function TaskItemList(props) {
                     <TaskItem
                         key={task.id}
                         task={task}
-                        onRemove={handleRemove}
-                        onComplete={handleComplete}
+                        onDelete={handleRemove}
+                        onChecked={handleComplete}
                     />
                 ))}
             </div>
