@@ -1,4 +1,4 @@
-import { TaskItem } from './TaskItem'
+import TaskItem from './TaskItem'
 import InputForm from './InputForm';
 import emptyTasks from './assets/notebook.svg';
 import { useState } from 'react';
