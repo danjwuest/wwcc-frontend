@@ -16,7 +16,7 @@ class TaskItem extends Component {
             // if it collided with the html attributes.
             description: propTypes.string
         }),
-        onChecked: propTypes.func,
+        onChange: propTypes.func,
         onDelete: propTypes.func
 
     }
@@ -24,10 +24,10 @@ class TaskItem extends Component {
 
     // Check handler that calls onComplete from the List object of TaskItem objects
     handleChecked = (e) => {
-        const {task, onChecked} = this.props;
+        const {task, onChange} = this.props;
 
         if (e.target.checked) {
-            onChecked(task.id);
+            onChange(task.id);
         }
     }
 
@@ -50,7 +50,7 @@ class TaskItem extends Component {
                     className="task-checkbox"
                     type="checkbox"
                     checked={task.complete}
-                    onChecked={this.handleChecked}
+                    onChange={this.handleChecked}
                 />
                 
                 <div className="task-description">{task.description}</div>
