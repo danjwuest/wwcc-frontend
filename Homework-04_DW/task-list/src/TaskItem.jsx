@@ -12,10 +12,10 @@ export default function TaskItem(props){
     const [task, setTask] = useState(props.task)
 
     const handleChecked = (e) => {
-        const {task, onChecked} = props;
+        const {task, onChange} = props;
 
         if (e.target.checked) {
-            onChecked(task.id);
+            onChange(task.id);
         }
     }
 
@@ -34,7 +34,7 @@ export default function TaskItem(props){
                 className="task-checkbox"
                 type="checkbox"
                 checked={task.complete}
-                onChecked={this.handleChecked}
+                onChange={handleChecked}
             />
             
             <div className="task-description">{task.description}</div>
@@ -43,7 +43,7 @@ export default function TaskItem(props){
                 className="task-remove-icon"
                 src={garbageIcon}
                 alt="Remove task"
-                onClick={this.handleDelete}
+                onClick={handleDelete}
             />
         </div>
     )
@@ -54,7 +54,7 @@ TaskItem.propTypes = {
         complete: propTypes.bool,
         description: propTypes.string
     }),
-    onChecked: propTypes.func,
+    onChange: propTypes.func,
     onDelete: propTypes.func
 
 }
